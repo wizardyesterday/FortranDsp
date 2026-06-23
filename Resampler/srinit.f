@@ -1,8 +1,8 @@
-c-------------------------------------------------------------------------
+c-----------------------------------------------------------------------
 c subroutine srinit
 c initialization before srconv which converts the sampling rate
 c of a signal by the ratio of l/m
-c-------------------------------------------------------------------------
+c-----------------------------------------------------------------------
 c
       subroutine srinit(m, l, qbuf, nq, coef, n, cofs, nc, ictr, ni,
      *                  ierr)
