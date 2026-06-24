@@ -1,6 +1,11 @@
 c
-c--------------------------------------------------------------------
-c--------------------------------------------------------------------
+c-----------------------------------------------------------------------
+c main program: this program to perform sampling rate conversion
+c               by a rational ratio
+c author        r,e, crochiere
+c               bell laboratories, murray hill, new jersey 07914
+c input:        coef = array of coefficients for fir interpolating filter
+c-----------------------------------------------------------------------
 c
       common /srcom/ iq, jq, il
       dimension coef(60), cofs(120),qbuf(10), ictr(16),bufl(24),
