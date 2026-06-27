@@ -56,7 +56,8 @@ c
       write (lpt,9994)
       nn = 24
       write (lpt,9997) (bufl(k),k=1,nn)
-9999  format (7f11.0)
+c9999  format (7f11.0)
+9999  format (f11.0)
 9998  format (13h coefficients)
 9997  format (5f10.6)
 9996  format (1h )
