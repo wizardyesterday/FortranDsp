@@ -8,7 +8,7 @@ c input:        coef = array of coefficients for fir interpolating filter
 c-----------------------------------------------------------------------
 c
       common /srcom/ iq, jq, il
-      dimension coef(60), cofs(120),qbuf(10), ictr(16),bufl(24),
+      dimension coef(60), cofs(120),qbuf(30), ictr(16),bufl(24),
      *          bufm(15)
       iq = 0
       jq = 0
