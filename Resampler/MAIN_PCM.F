@@ -8,8 +8,8 @@ C INPUT:        COEF = ARRAY OF COEFFICIENTS FOR FIR INTERPOLATING FILTER
 C-----------------------------------------------------------------------
 C
       COMMON /SRCOM/ IQ, JQ, IL
-      DIMENSION COEF(60), COFS(120),QBUF(30), ICTR(16),BUFL(24),
-     *          BUFM(15)
+      DIMENSION COEF(68), COFS(54),QBUF(54), ICTR(10),BUFL(15),
+     *          BUFM(6)
       IQ = 0
       JQ = 0
       IL = 0
@@ -24,7 +24,7 @@ C OUTPUT: ALL OUTPUT IS WRITTEN ON THE STANDARD OUTPUT UNIT (LPT)
 C
       IND = 5
       LPT = 6
-      NN = 60
+      NN = 68
       READ (IND,9999) (COEF(K),K=1,NN)
       WRITE (LPT,9998)
       WRITE (LPT,9997) (COEF(K),K=1,NN)
@@ -32,19 +32,19 @@ C
 C
 C INITIALIZE CONVERSION ROUTINE.
 C
-      N = 119
-      NC = 120
+      N = 134
+      NC = 135
       NI = 16
-      L = 8
-      M = 5
-      NQ = 30
+      L = 5
+      M = 2
+      NQ = 54
       CALL SRINIT(M, L, QBUF, NQ, COEF, N, COFS, NC, ICTR, NI, IERR)
       WRITE (LPT,9995) IERR
       WRITE (LPT,9996)
 C
 C GENERATE UNIT SAMPLE
 C
-      DO 10 I=1,15
+      DO 10 I=1,6
         BUFM(I) = 0.
 10    CONTINUE
       BUFM(1) = 1
@@ -54,7 +54,7 @@ C
       ND = 3
       CALL SRCONV(BUFM, BUFL, ND, QBUF, COFS, ICTR)
       WRITE (LPT,9994)
-      NN = 24
+      NN = 15
       WRITE (LPT,9997) (BUFL(K),K=1,NN)
 C9999  FORMAT (7F11.0)
 9999  FORMAT (F11.0)
