@@ -1,6 +1,6 @@
 This repository contains digital signal processing programs written in
 the FORTRAN. The Resampler directory contains the original code written
-by R. E. Crochiere of Bell Laboratories, Murray Hill, Ne Jersey 07914.
+by R.E. Crochiere of Bell Laboratories, Murray Hill, Ne Jersey 07914.
 It is not my goal to plagiarize any of the author's code, but rather to
 have this code available for others to use.
 Most of the code is *not* open source except for any additional code that

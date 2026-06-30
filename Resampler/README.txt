@@ -10,7 +10,7 @@ To build the original test application, and my application, type:
 sh buildResamplers.sh.
 
 To build the support applications, change to the Resampler/AudioDemo
-directory and type: sh buldFilters.sh
+directory and type: sh buildFilters.sh
 
 To run the original application:, change to the Resampler directory and type:
 ./unitSampleDemo < coefficients.txt.
