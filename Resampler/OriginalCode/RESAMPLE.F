@@ -65,7 +65,7 @@ C9999  FORMAT (7F11.0)
 9994  FORMAT (21H UNIT SAMPLE RESPONSE)
       STOP
       END
-
+C
 C-----------------------------------------------------------------------
 C SUBROUTINE SRINIT
 C INITIALIZATION BEFORE SRCONV WHICH CONVERTS THE SAMPLING RATE
@@ -163,7 +163,7 @@ C
 50    CONTINUE
       RETURN
       END
-
+C
 C-----------------------------------------------------------------------
 C SUBROUTIN SRCONV
 C CONVERTS THE SAMPLING RATE OF A SIGNAL  BY THE RATIO L/M.
@@ -221,4 +221,3 @@ C
 50    CONTINUE
       RETURN
       END
-
