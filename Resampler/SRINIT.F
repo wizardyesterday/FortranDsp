@@ -27,7 +27,6 @@ C      = 1  QBUF (NQ) TOO SMALL
 C      = 2  COFS (NC) TOO SMALL
 C      = 3  ICTR (NI) TOO SMALL
 C
-C
       IERR = 0
       IL = L
 C
