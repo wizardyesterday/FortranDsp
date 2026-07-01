@@ -9,7 +9,7 @@ C-----------------------------------------------------------------------
 C
       COMMON /SRCOM/ IQ, JQ, IL
       DIMENSION COEF(60), COFS(120),QBUF(30), ICTR(16),BUFL(24),
-     *          BUFM(15)
+     *        BUFM(15)
       IQ = 0
       JQ = 0
       IL = 0
@@ -46,7 +46,7 @@ C GENERATE UNIT SAMPLE
 C
       DO 10 I=1,15
         BUFM(I) = 0.
-10    CONTINUE
+ 10   CONTINUE
       BUFM(1) = 1
 C
 C PROCESS DATA

@@ -31,7 +31,7 @@ C
 C
 C UPDATE QBUF
 C
-10        IF (JD.EQ.0) GO TO 20
+ 10       IF (JD.EQ.0) GO TO 20
           QBUF(JQ) = BUFM(MB)
           JQ1 = JQ + IQ
           QBUF(JQ1) = BUFM(MB)
@@ -43,16 +43,16 @@ C
 C
 C COMPUTE 1 SAMPLE OF OUTPUT DATA AND STORE IN BUFL
 C
-20        SUM = 0
+ 20       SUM = 0
           DO 30 KQ=1,IQ
             ICOF = KQ + IC
             IQB = KQ + JQ
             SUM = SUM + QBUF(IQB)*COFS(ICOF)
-30        CONTINUE
+ 30       CONTINUE
           BUFL(LB) = SUM
           LB = LB + 1
-40      CONTINUE
-50    CONTINUE
+ 40     CONTINUE
+ 50   CONTINUE
       RETURN
       END
 

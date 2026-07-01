@@ -5,7 +5,7 @@ C OF A SIGNAL BY THE RATIO OF L/M
 C-----------------------------------------------------------------------
 C
       SUBROUTINE SRINIT(M, L, QBUF, NQ, COEF, N, COFS, NC, ICTR, NI,
-     *                  IERR)
+     *    IERR)
       COMMON /SRCOM/ IQ, JQ, IL
       DIMENSION QBUF(1), COEF(1), COFS(1), ICTR(1)
 C
@@ -44,7 +44,7 @@ C ZERO OUT QBUF
 C
       DO 10 I=1,NQ
         QBUF(I) = 0
-10    CONTINUE
+ 10   CONTINUE
 C
 C SCRAMBLE COEFFICIENTS
 C
@@ -57,8 +57,8 @@ C
           IF (MM.LE.NCF) COFS(I) = COEF(MM)*FL
           IF (MM.GT.NCF) COFS(I) = 0
           I = I + 1
-20      CONTINUE
-30    CONTINUE
+ 20     CONTINUE
+ 30   CONTINUE
 C
 C SETUP OF MOVING ADDRESS POINTER
 C
@@ -88,10 +88,10 @@ C
         INCR = 0
         MC = -1
         K = K + 1
-40      LC = LC + 1
+ 40     LC = LC + 1
         IF (LC.GE.L) LC = 0
         MC = MC + 1
-50    CONTINUE
+ 50   CONTINUE
       RETURN
       END
 

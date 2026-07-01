@@ -9,7 +9,7 @@ C-----------------------------------------------------------------------
 C
       COMMON /SRCOM/ IQ, JQ, IL
       DIMENSION COEF(60), COFS(120),QBUF(30), ICTR(16),BUFL(24),
-     *          BUFM(15)
+     *        BUFM(15)
       IQ = 0
       JQ = 0
       IL = 0
@@ -46,7 +46,7 @@ C GENERATE UNIT SAMPLE
 C
       DO 10 I=1,15
         BUFM(I) = 0.
-10    CONTINUE
+ 10   CONTINUE
       BUFM(1) = 1
 C
 C PROCESS DATA
@@ -73,7 +73,7 @@ C OF A SIGNAL BY THE RATIO OF L/M
 C-----------------------------------------------------------------------
 C
       SUBROUTINE SRINIT(M, L, QBUF, NQ, COEF, N, COFS, NC, ICTR, NI,
-     *                  IERR)
+     *    IERR)
       COMMON /SRCOM/ IQ, JQ, IL
       DIMENSION QBUF(1), COEF(1), COFS(1), ICTR(1)
 C
@@ -112,7 +112,7 @@ C ZERO OUT QBUF
 C
       DO 10 I=1,NQ
         QBUF(I) = 0
-10    CONTINUE
+ 10   CONTINUE
 C
 C SCRAMBLE COEFFICIENTS
 C
@@ -125,8 +125,8 @@ C
           IF (MM.LE.NCF) COFS(I) = COEF(MM)*FL
           IF (MM.GT.NCF) COFS(I) = 0
           I = I + 1
-20      CONTINUE
-30    CONTINUE
+ 20     CONTINUE
+ 30   CONTINUE
 C
 C SETUP OF MOVING ADDRESS POINTER
 C
@@ -156,10 +156,10 @@ C
         INCR = 0
         MC = -1
         K = K + 1
-40      LC = LC + 1
+ 40     LC = LC + 1
         IF (LC.GE.L) LC = 0
         MC = MC + 1
-50    CONTINUE
+ 50   CONTINUE
       RETURN
       END
 C
@@ -196,7 +196,7 @@ C
 C
 C UPDATE QBUF
 C
-10        IF (JD.EQ.0) GO TO 20
+ 10       IF (JD.EQ.0) GO TO 20
           QBUF(JQ) = BUFM(MB)
           JQ1 = JQ + IQ
           QBUF(JQ1) = BUFM(MB)
@@ -208,15 +208,15 @@ C
 C
 C COMPUTE 1 SAMPLE OF OUTPUT DATA AND STORE IN BUFL
 C
-20        SUM = 0
+ 20       SUM = 0
           DO 30 KQ=1,IQ
             ICOF = KQ + IC
             IQB = KQ + JQ
             SUM = SUM + QBUF(IQB)*COFS(ICOF)
-30        CONTINUE
+ 30       CONTINUE
           BUFL(LB) = SUM
           LB = LB + 1
-40      CONTINUE
-50    CONTINUE
+ 40     CONTINUE
+ 50   CONTINUE
       RETURN
       END
